@@ -1,0 +1,19 @@
+{
+  "name": "url-title-classifier-testing",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "validation": "node index.js",
+    "simple": "node simple_test.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@huggingface/transformers": "^3.4.0",
+    "node-fetch": "^3.0.0"
+  },
+  "type": "module"
+}

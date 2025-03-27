@@ -1,5 +1,4 @@
 # URL Title Classifier Testing
-# URL Title Classifier Testing
 
 This repository demonstrates how to test the [URL-TITLE-classifier](https://huggingface.co/firefoxrecap/URL-TITLE-classifier) using Transformers.js. It includes validation data for evaluating the model’s performance and comparing it to the original PyTorch-trained model.
 

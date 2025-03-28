@@ -1,0 +1,13 @@
+{
+    "manifest_version": 2,
+    "name": "URL-TITLE-classifier test Extension",
+    "version": "0.1",
+    "description": "A simple extension that uses the Firefox AI runtime to classify urls and titles.",
+    "permissions": ["<all_urls>", "menus", "scripting", "storage"],
+    "optional_permissions": ["trialML"],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": true
+    }
+  }
+  

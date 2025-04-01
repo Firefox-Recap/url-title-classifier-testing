@@ -21,14 +21,21 @@ const CATEGORIES = [
 
 async function loadModelAndTokenizer() {
   const tokenizer = await AutoTokenizer.from_pretrained(
-    'firefoxrecap/URL-TITLE-classifier',
+    'tshasan/modernBERT-URLTITLE-classifier',
   );
   const model = await AutoModelForSequenceClassification.from_pretrained(
-    'firefoxrecap/URL-TITLE-classifier',
+    'tshasan/modernBERT-URLTITLE-classifier',
     {
       problem_type: 'multi_label_classification',
       low_cpu_mem_usage: true,
-      dtype: 'fp32', // Can be changed to test different dtypes
+      dtype: 'fp32', // original dtype
+      //dtype: 'fp16' // terrible performance worse than all other dtypes
+      //dtype: 'int8' // performes around 66% faster than fp32 with minor loss in accuracy
+      //Rest of the dtypes are have subpar performance equivalent to the int8 datatype
+      //dtype: 'q8'
+      //dtype: 'uint8'
+      //dtype: 'q4'
+      //dtype: 'bnb4'
     },
   );
   return {model, tokenizer};
@@ -144,7 +151,10 @@ async function main() {
 
     // Read validation data
     console.log('Reading validation data...');
-    const fileContent = fs.readFileSync('data/validation_results.csv', 'utf-8');
+    const fileContent = fs.readFileSync(
+      'data/processed/validation_results.csv',
+      'utf-8',
+    );
     const records = parse(fileContent, {
       columns: true,
       skip_empty_lines: true,
@@ -234,7 +244,7 @@ async function main() {
     }
 
     // Save results to new CSV
-    const outputPath = 'data/js_validation_results.csv';
+    const outputPath = 'data/processed/js_validation_results.csv';
     const header = Object.keys(results[0]).join(',') + '\n';
     const rows = results.map((r) => Object.values(r).join(',')).join('\n');
     fs.writeFileSync(outputPath, header + rows);

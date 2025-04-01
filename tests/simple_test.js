@@ -4,8 +4,9 @@ import {
 } from '@huggingface/transformers';
 
 const TEST_URL =
-  'https://www.techhealth.gov/articles/new-technology-for-Travel';
-const TEST_TITLE = 'Government Announces New Technology for Travel Innovation';
+  'https://www.reuters.com/markets/deals/blackstone-evaluates-taking-stake-us-tiktok-spinoff-2025-03-28/';
+const TEST_TITLE =
+  'Exclusive: Blackstone mulls small stake in US TikTok spinoff, sources say';
 const inputText = `${TEST_URL}:${TEST_TITLE}`;
 
 async function runRawDemo() {
@@ -17,15 +18,12 @@ async function runRawDemo() {
     'firefoxrecap/URL-TITLE-classifier',
     {
       problem_type: 'multi_label_classification',
-      low_cpu_mem_usage: true,
       dtype: 'int8',
+      use_cache: true,
+      revision: 'main',
     },
   );
-  // ok so changing the dtype to anything other than fp32 ruin performance because the getting the raw outputs converts them to fp32
-  // and any other dtype will be converted to fp32 so it will just be slower the proper implemenation doesnt actually return multi labels just one.
-
-  //console.log(model.config);
-
+  console.log(model.config);
   // Tokenize input
   const inputs = tokenizer(inputText, {return_tensors: 'pt'});
 

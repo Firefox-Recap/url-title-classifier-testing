@@ -96,9 +96,10 @@ This will:
 
 Follow the Jupyter notebooks in order:
 
-1. `01_data_cleaning.ipynb` – Data cleaning & preprocessing
-2. `02_data_analysis.ipynb` – Exploratory data analysis
-3. `03_model_training.ipynb` – Model training
+1. `01_warc_data_cleaning.ipynb` – WARC data cleaning & preprocessing
+2. `02_synthetic_data_cleaning.ipynb` – Synthetic data cleaning
+3. `03_data_analysis.ipynb` – Exploratory data analysis
+4. `04_model_training.ipynb` – Model training
 
 > Trained models are saved in `data/models/`.
 

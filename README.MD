@@ -100,6 +100,8 @@ Follow the Jupyter notebooks in order(note this repo doesnt contain the datasets
 2. `02_synthetic_data_cleaning.ipynb` – Synthetic data cleaning
 3. `03_data_analysis.ipynb` – Exploratory data analysis
 4. `04_model_training.ipynb` – Model training
+5. `05_embedding_analysis.ipynb` – Embedding analysis & clustering
+6. `06_MI_analysis.ipynb` – Model inspection analysis
 
 > Trained models are saved in `data/models/`.
 

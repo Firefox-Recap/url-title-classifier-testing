@@ -27,20 +27,26 @@ Deployed on Hugging Face: [firefoxrecap/URL-TITLE-classifier](https://huggingfac
 
 ## Planned Improvements
 
-- Enhanced preprocessing and feature extraction
-- Class imbalance mitigation (via class weights or focal loss)
-- Hyperparameter optimization
-- Unfreezing more layers
-- Creation of a high-quality "golden" dataset
-- Exploration of advanced modeling techniques:
-  - Dual-encoder model (URL + Title) with fusion layer, followed by pruning
-  - Ensemble methods
-  - Adaptive learning (e.g., curriculum learning)
-  - Contrastive learning using unlabeled data
-  - Co-training with pseudo-labeling
-  - Larger datasets or splits using the [Tranco list](https://tranco-list.eu/)
-  - Improved prompts for synthetic data generation
-  - Optimized label set
+### Implemented
+- **Unfreezing more layers** – *Gradual unfreezing and fine-tuning the entire model worked best – completed*
+
+### In Progress (Needs Resources)
+- **Domain-Adaptive Pretraining** – *Setup is ready, but requires more hardware to proceed*
+- **Class imbalance mitigation** (via class weights or focal loss) – *Implemented, hardware-bound*
+- **Hyperparameter optimization** – *Implemented, hardware-bound*
+
+### To Do
+- **Creation of a high-quality "golden" dataset** – *Still needs to be done*
+
+### Exploration of Advanced Modeling Techniques
+- **Dual-encoder model** (URL + Title) with fusion layer, followed by pruning – *Potentially effective, but complex*
+- **Adaptive learning** (e.g., curriculum learning) – *Slight improvements observed in practice*
+- **Contrastive learning** using unlabeled data – *Pending exploration*
+- **Co-training with pseudo-labeling** – *Pending*
+- **Larger datasets or smarter splits** using the [Tranco list](https://tranco-list.eu/) – *Planned*
+- **Improved prompts** for synthetic data generation – *Planned*
+- **Optimized label set** – *Planned*
+
 
 ---
 
